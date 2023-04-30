@@ -1,0 +1,56 @@
+@prefix : <https://w3id.org/riverbench/temp#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rb: <https://w3id.org/riverbench/schema/metadata#> .
+@prefix rbt: <https://w3id.org/riverbench/schema/theme#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# This file contains the manually written metadata for the dataset.
+# The URI of the dataset here is temporary. Real URIs are assigned
+# automatically in CI.
+
+:dataset
+    a rb:Dataset, dcat:Dataset ;
+    dcterms:conformsTo <https://w3id.org/riverbench/schema/metadata> ;
+    dcterms:identifier "[YOUR DATASET ID (only a-z, 0-9, -)]" ;
+
+    dcterms:title "[HUMAN-READABLE NAME OF YOUR DATASET]"@en ;
+    dcterms:description "[ELABORATED DESCRIPTION OF THE DATASET]"@en ;
+    dcterms:issued "[DATE OF INITIAL SUBMISSION, YYYY-MM-DD]"^^xsd:date ;
+
+    # License and attribution
+    # SPDX license list: https://spdx.org/licenses/
+    dcterms:license <SPDX-LICENSE-URL> ;
+    # Feel free to add more creators or use any FOAF properties here
+    dcterms:creator [
+        foaf:name "[YOUR NAME]" ;
+        foaf:nick "[YOUR NICK]" ;
+        foaf:homepage <LINK-TO-YOUR-PAGE>
+    ] ;
+    
+    # Themes
+    # Full list of themes: https://w3id.org/riverbench/schema/theme.ttl
+    dcat:theme <ADD-AT-LEAST-ONE-THEME> ;
+
+    # Technical metadata
+    # URIs of the ontologies used in the dataset
+    rb:usesOntology <ADD-ONTOLOGY-URIS> ;
+    # Set to number of stream elements in the dataset
+    rb:hasStreamElementCount -1 ;
+    # One of: rb:triples, rb:quads, rb:graphs
+    rb:hasStreamElementType <STREAM-ELEMENT-TYPE> ;
+    rb:hasStreamElementSplit [
+        a <SPLIT-TYPE> ;
+        rdfs:comment "[FURTHER EXPLANATION ON THE SPLIT]"@en
+    ] ;
+    rb:conformsToRdf11 "" ; # true or false
+    rb:conformsToRdfStarDraft_20211217 "" ; # true or false
+    rb:usesGeneralizedRdfDatasets "" ; # true or false
+    rb:usesGeneralizedTriples "" ; # true or false
+    rb:usesRdfStar "" ; # true or false
+    
+    # Add any additional metadata here (e.g., temporal resolution)
+.

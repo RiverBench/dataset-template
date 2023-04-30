@@ -1,0 +1,19 @@
+name: "Release"
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+  workflow_dispatch: {}
+
+jobs:
+  validate:
+    uses: RiverBench/ci-workflows/.github/workflows/dataset-validate.yaml@main
+    secrets: inherit
+
+  release:
+    uses: RiverBench/ci-workflows/.github/workflows/dataset-release.yaml@main
+    needs: validate
+    permissions: write-all
+    secrets: inherit

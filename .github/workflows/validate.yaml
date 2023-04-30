@@ -1,0 +1,11 @@
+name: "Validate"
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  validate:
+    uses: RiverBench/ci-workflows/.github/workflows/dataset-validate.yaml@main
+    secrets: inherit
