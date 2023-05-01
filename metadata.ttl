@@ -43,6 +43,8 @@
     # One of: rb:triples, rb:quads, rb:graphs
     rb:hasStreamElementType <STREAM-ELEMENT-TYPE> ;
     rb:hasStreamElementSplit [
+        # At least one of: rb:StatementCountStreamElementSplit,
+        #   rb:TimeStreamElementSplit, rb:TopicStreamElementSplit
         a <SPLIT-TYPE> ;
         rdfs:comment "[FURTHER EXPLANATION ON THE SPLIT]"@en
     ] ;
