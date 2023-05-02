@@ -3,6 +3,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rb: <https://w3id.org/riverbench/schema/metadata#> .
+@prefix rbdoc: <https://w3id.org/riverbench/schema/documentation#> .
 @prefix rbt: <https://w3id.org/riverbench/schema/theme#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
@@ -30,7 +31,9 @@
     dcterms:creator [
         foaf:name "[YOUR NAME]" ;
         foaf:nick "[YOUR NICK]" ;
-        foaf:homepage <LINK-TO-YOUR-PAGE>
+        foaf:homepage <LINK-TO-YOUR-PAGE> ;
+        # Optional: use this property to order creators in the generated docs
+        rbdoc:hasDocWeight 1 ;
     ] ;
     
     # Themes
