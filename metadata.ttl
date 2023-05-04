@@ -27,6 +27,7 @@
     # Do not include ".html" at the end of the SPDX license URL
     # Example of a valid URL: https://spdx.org/licenses/CC-BY-4.0
     dcterms:license <SPDX-LICENSE-URL> ;
+    dcterms:rights "[ADDITIONAL LICENSING NOTES, IF NEEDED]"@en ;
     # Feel free to add more creators or use any FOAF properties here
     dcterms:creator [
         foaf:name "[YOUR NAME]" ;
@@ -37,7 +38,7 @@
     ] ;
     
     # Themes
-    # Full list of themes: https://w3id.org/riverbench/schema/theme.ttl
+    # Full list of themes: https://w3id.org/riverbench/schema/theme
     dcat:theme <ADD-AT-LEAST-ONE-THEME> ;
 
     # Technical metadata
