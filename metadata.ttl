@@ -36,6 +36,8 @@
         # Optional: use this property to order creators in the generated docs
         rbdoc:hasDocWeight 1 ;
     ] ;
+    # If applicable, add a link to the original source of the dataset
+    dcterms:source <LINK-TO-SOURCE> ;
     
     # Themes
     # Full list of themes: https://w3id.org/riverbench/schema/theme
