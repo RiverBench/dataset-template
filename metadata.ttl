@@ -6,7 +6,9 @@
 @prefix rbdoc: <https://w3id.org/riverbench/schema/documentation#> .
 @prefix rbt: <https://w3id.org/riverbench/schema/theme#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix stax: <https://w3id.org/stax/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # This file contains the manually written metadata for the dataset.
@@ -48,15 +50,30 @@
     rb:usesOntology <ADD-ONTOLOGY-URIS> ;
     # Set to number of stream elements in the dataset
     rb:hasStreamElementCount -1 ;
-    # One of: rb:triples, rb:quads, rb:graphs
-    rb:hasStreamElementType <STREAM-ELEMENT-TYPE> ;
+    # Stream type according to the RDF Stream Taxonomy (RDF-STaX)
+    # Each dataset must have two stream type usages: one for the grouped
+    # stream type and one for the flat stream type.
+    # Full list of stream types: https://w3id.org/stax/ontology
+    # STaX stream types overview: https://w3id.org/stax/dev/taxonomy/
+    stax:hasStreamTypeUsage [
+        a stax:RdfStreamTypeUsage ;
+        rdfs:comment "[GROUPED STREAM TYPE EXPLANATION]"@en ;
+        stax:hasStreamType <GROUPED-STREAM-TYPE-URI> ;
+    ] , [
+        a stax:RdfStreamTypeUsage ;
+        rdfs:comment "[FLAT STREAM TYPE EXPLANATION]"@en ;
+        stax:hasStreamType <FLAT-STREAM-TYPE-URI> ;
+    ] ;
     rb:hasStreamElementSplit [
         # At least one of: rb:StatementCountStreamElementSplit,
         #   rb:TimeStreamElementSplit, rb:TopicStreamElementSplit
         a <SPLIT-TYPE> ;
         # If your dataset is split by time, specify the temporal property:
         # rb:hasTemporalProperty <PROPERTY-IRI> ;
-        rdfs:comment "[FURTHER EXPLANATION ON THE SPLIT]"@en
+        rdfs:comment "[FURTHER EXPLANATION ON THE SPLIT]"@en ;
+        # If your dataset is an RDF subject graph stream, specify the
+        # subject node shape using SHACL:
+        # rb:hasSubjectShape [  ] ;
     ] ;
     rb:conformsToRdf11 "" ; # true or false
     rb:conformsToRdfStarDraft_20211217 "" ; # true or false
