@@ -1,10 +1,10 @@
 @prefix : <https://w3id.org/riverbench/temp#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix eurovoc: <http://eurovoc.europa.eu/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rb: <https://w3id.org/riverbench/schema/metadata#> .
 @prefix rbdoc: <https://w3id.org/riverbench/schema/documentation#> .
-@prefix rbt: <https://w3id.org/riverbench/schema/theme#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
@@ -41,8 +41,11 @@
     # If applicable, add a link to the original source of the dataset
     dcterms:source <LINK-TO-SOURCE> ;
     
-    # Themes
-    # Full list of themes: https://w3id.org/riverbench/schema/theme
+    # Themes from EuroVoc
+    # E.g., eurovoc:4267, eurovoc:7219
+    # Use only concepts (those without numbers in their names), 
+    # not domain concepts or concept schemes.
+    # EuroVoc browser: https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://eurovoc.europa.eu/100141
     dcat:theme <ADD-AT-LEAST-ONE-THEME> ;
 
     # Technical metadata
