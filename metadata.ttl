@@ -79,10 +79,11 @@
         # rb:hasTemporalProperty <PROPERTY-IRI> ;
 
         rdfs:comment "[FURTHER EXPLANATION ON THE SPLIT]"@en ;
-        
+
         # If your dataset is an RDF subject graph stream, you must specify the
         # subject node shape using SHACL.
         # Example: https://github.com/RiverBench/dataset-linked-spending/blob/main/metadata.ttl
+        # SHACL documentation: https://www.w3.org/TR/shacl/#constraints-section
         # rb:hasSubjectShape [  ] ;
     ] ;
     rb:conformsToRdf11 "" ; # true or false
