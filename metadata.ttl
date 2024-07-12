@@ -13,7 +13,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # This file contains the manually written metadata for the dataset.
-# The URI of the dataset here is temporary. Real URIs are assigned
+# The IRI of the dataset here is temporary. Real IRIs are assigned
 # automatically in CI.
 
 :dataset
@@ -22,61 +22,67 @@
     dcterms:identifier "[YOUR DATASET ID (only a-z, 0-9, -)]" ;
 
     dcterms:title "[HUMAN-READABLE NAME OF YOUR DATASET]"@en ;
-    dcterms:description "[ELABORATED DESCRIPTION OF THE DATASET]"@en ;
-    dcterms:issued "[DATE OF INITIAL SUBMISSION, YYYY-MM-DD]"^^xsd:date ;
+    dcterms:description """[ELABORATED DESCRIPTION OF THE DATASET]"""@en ;
+    dcterms:issued "[DATE OF INITIAL SUBMISSION TO RIVERBENCH, YYYY-MM-DD]"^^xsd:date ;
 
     # License and attribution
     # SPDX license list: https://spdx.org/licenses/
     # Do not include ".html" at the end of the SPDX license URL
     # Example of a valid URL: https://spdx.org/licenses/CC-BY-4.0
     dcterms:license <SPDX-LICENSE-URL> ;
-    dcterms:rights "[ADDITIONAL LICENSING NOTES, IF NEEDED]"@en ;
+    dcterms:rights "[ADDITIONAL LICENSING NOTES, IF NEEDED, OTHERWISE REMOVE THIS]"@en ;
     # Feel free to add more creators or use any FOAF properties here
+    # All fields are optional, but at least one creator is required
     dcterms:creator [
         foaf:name "[YOUR NAME]" ;
         foaf:nick "[YOUR NICK]" ;
         foaf:homepage <LINK-TO-YOUR-PAGE> ;
-        # Optional: use this property to order creators in the generated docs
+        rdfs:comment "[EXPLAIN, E.G., YOUR ROLE IN THE DATASET CREATION]"@en ;
+        # Use this property to order creators in the generated docs (from 1 to N)
         rbdoc:hasDocWeight 1 ;
     ] ;
-    # If applicable, add a link to the original source of the dataset
+    # If applicable, add a link or multiples links to the original source of the dataset
     dcterms:source <LINK-TO-SOURCE> ;
     
     # Themes from EuroVoc
     # E.g., eurovoc:4267, eurovoc:7219
     # Use only concepts (those without numbers in their names), 
     # not domain concepts or concept schemes.
-    # EuroVoc browser: https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://eurovoc.europa.eu/100141
-    dcat:theme <ADD-AT-LEAST-ONE-THEME> ;
+    # EuroVoc browser: https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?IRI=http://eurovoc.europa.eu/100141
+    dcat:theme eurovoc:ADD-AT-LEAST-ONE-THEME ;
 
     # Technical metadata
-    # URIs of the vocabularies and ontologies used in the dataset
-    void:vocabulary <ADD-VOCABULARY-URIS> ;
+    # IRIs of the vocabularies and ontologies used in the dataset
+    void:vocabulary <ADD-VOCABULARY-IRIS> ;
     # Set to number of stream elements in the dataset
     rb:hasStreamElementCount -1 ;
     # Stream type according to the RDF Stream Taxonomy (RDF-STaX)
     # Each dataset must have two stream type usages: one for the grouped
     # stream type and one for the flat stream type.
-    # Full list of stream types: https://w3id.org/stax/ontology
-    # STaX stream types overview: https://w3id.org/stax/dev/taxonomy/
+    # Full list of stream types: https://w3id.org/stax/dev/taxonomy/
     stax:hasStreamTypeUsage [
         a stax:RdfStreamTypeUsage ;
         rdfs:comment "[GROUPED STREAM TYPE EXPLANATION]"@en ;
-        stax:hasStreamType <GROUPED-STREAM-TYPE-URI> ;
+        stax:hasStreamType stax:GROUPED-STREAM-TYPE-IRI ;
     ] , [
         a stax:RdfStreamTypeUsage ;
         rdfs:comment "[FLAT STREAM TYPE EXPLANATION]"@en ;
-        stax:hasStreamType <FLAT-STREAM-TYPE-URI> ;
+        stax:hasStreamType stax:FLAT-STREAM-TYPE-IRI ;
     ] ;
     rb:hasStreamElementSplit [
         # At least one of: rb:StatementCountStreamElementSplit,
         #   rb:TimeStreamElementSplit, rb:TopicStreamElementSplit
         a <SPLIT-TYPE> ;
-        # If your dataset is split by time, specify the temporal property:
+
+        # If your dataset is split by time, you must specify the temporal property.
+        # Example: https://github.com/RiverBench/dataset-assist-iot-weather-graphs/blob/main/metadata.ttl
         # rb:hasTemporalProperty <PROPERTY-IRI> ;
+
         rdfs:comment "[FURTHER EXPLANATION ON THE SPLIT]"@en ;
-        # If your dataset is an RDF subject graph stream, specify the
-        # subject node shape using SHACL:
+        
+        # If your dataset is an RDF subject graph stream, you must specify the
+        # subject node shape using SHACL.
+        # Example: https://github.com/RiverBench/dataset-linked-spending/blob/main/metadata.ttl
         # rb:hasSubjectShape [  ] ;
     ] ;
     rb:conformsToRdf11 "" ; # true or false
