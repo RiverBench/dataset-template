@@ -48,7 +48,7 @@
     # E.g., eurovoc:4267, eurovoc:7219
     # Use only concepts (those without numbers in their names), 
     # not domain concepts or concept schemes.
-    # EuroVoc browser: https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?IRI=http://eurovoc.europa.eu/100141
+    # EuroVoc browser: https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://eurovoc.europa.eu/100141
     dcat:theme eurovoc:ADD-AT-LEAST-ONE-THEME ;
 
     # Technical metadata
