@@ -1,16 +1,16 @@
-@prefix : <https://w3id.org/riverbench/temp#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix eurovoc: <http://eurovoc.europa.eu/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix rb: <https://w3id.org/riverbench/schema/metadata#> .
-@prefix rbdoc: <https://w3id.org/riverbench/schema/documentation#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix spdx: <http://spdx.org/rdf/terms#> .
-@prefix stax: <https://w3id.org/stax/ontology#> .
-@prefix void: <http://rdfs.org/ns/void#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX : <https://w3id.org/riverbench/temp#> .
+PREFIX dcat: <http://www.w3.org/ns/dcat#> .
+PREFIX dcterms: <http://purl.org/dc/terms/> .
+PREFIX eurovoc: <http://eurovoc.europa.eu/> .
+PREFIX foaf: <http://xmlns.com/foaf/0.1/> .
+PREFIX rb: <https://w3id.org/riverbench/schema/metadata#> .
+PREFIX rbdoc: <https://w3id.org/riverbench/schema/documentation#> .
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+PREFIX sh: <http://www.w3.org/ns/shacl#> .
+PREFIX spdx: <http://spdx.org/rdf/terms#> .
+PREFIX stax: <https://w3id.org/stax/ontology#> .
+PREFIX void: <http://rdfs.org/ns/void#> .
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # This file contains the manually written metadata for the dataset.
 # The IRI of the dataset here is temporary. Real IRIs are assigned
